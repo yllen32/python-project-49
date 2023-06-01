@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
-import prompt
+from .utils import greeting_user
 
 
 def main() -> None:
     """Greeting"""
-    print('Welcome to the Brain Games!')
-
-    name = prompt.string('May I have your name? ')
-    print(f'Hello, {name}!')
+    greeting_user()
 
 
 if __name__ == '__main__':
