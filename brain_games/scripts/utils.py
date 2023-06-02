@@ -17,7 +17,7 @@ def default_rules() -> str:
     """Print rules for user."""
     return (
             f'Answer "{Answer.CORRECT.value}" if the number is even, '
-            f'otherwise answer "{Answer.WRONG.value}".'
+            f'Otherwise answer "{Answer.WRONG.value}".'
         )
 
 
