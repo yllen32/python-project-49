@@ -25,9 +25,9 @@ def greeting_user() -> str:
 def say_user_wrong_answer(user_answer: str, right_answer: str) -> None:
     """Print user answer and correct answer."""
     return (
-                f"'{user_answer}' is wrong answer ;(. "
-                f"Correct answer was '{right_answer}'."
-            )
+        f"'{user_answer}' is wrong answer ;(. "
+        f"Correct answer was '{right_answer}'."
+    )
 
 
 def cheer_up(user_name: str) -> None:
