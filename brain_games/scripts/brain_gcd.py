@@ -3,25 +3,23 @@ from random import randint
 
 from .utils import play_game
 
+RULES = "Find the greatest common divisor of given numbers."
+
 
 def main() -> None:
-    play_game(_print_rules, _get_question, _get_right_answer)
+    play_game(_get_question_and_answer, RULES)
 
 
-def _print_rules() -> None:
-    """Print rules for user."""
-    return print("Find the greatest common divisor of given numbers.")
-
-
-def _get_question() -> tuple:
+def _get_question_and_answer() -> tuple:
     """Get random integer from 1 to 100 range"""
-    return randint(1, 100), randint(1, 100)
+    a, b = randint(1, 100), randint(1, 100)
+    print(_get_right_answer(a, b))
+    return f'{a} {b}', _get_right_answer(a, b)
 
 
-def _get_right_answer(digits: tuple) -> str:
+def _get_right_answer(a: int, b: int) -> str:
     """Get right answer for given digit. return 'yes' if it even, 'no'
     otherwise."""
-    a, b = digits
     while b != 0:
         a, b = b, a % b
     return str(a)
