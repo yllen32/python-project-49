@@ -12,7 +12,7 @@ def main() -> None:
     play_game(_get_expression_and_answer, RULES)
 
 
-def _get_expression_and_answer() -> str:
+def _get_expression_and_answer() -> tuple:
     """Get random string expression"""
     expression = f'{randint(1, 100)} {choice(OPERATORS)} {randint(1, 100)}'
     return expression, _get_right_answer(expression)
