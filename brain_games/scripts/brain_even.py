@@ -5,20 +5,13 @@ from .utils import Answer,  play_game
 
 
 def main() -> None:
-    play_game(_print_rules, _get_digit_for_question, _get_right_answer)
+    play_game(_get_question_and_answer)
 
 
-def _print_rules() -> None:
-    """Print rules for user."""
-    return print(
-            f'Answer "{Answer.CORRECT.value}" if the number is even, '
-            f'otherwise answer "{Answer.WRONG.value}".'
-        )
-
-
-def _get_digit_for_question() -> str:
+def _get_question_and_answer() -> str:
     """Get random integer from 1 to 100 range"""
-    return randint(1, 100)
+    digit = randint(1, 100)
+    return digit, _get_right_answer(digit)
 
 
 def _get_right_answer(digit: int) -> str:
