@@ -13,14 +13,6 @@ MAX_ATTEMPTS = 3
 CORRECT_STATUS = 'Correct!'
 
 
-def default_rules() -> str:
-    """Print rules for user."""
-    return (
-            f'Answer "{Answer.CORRECT.value}" if the number is even, '
-            f'Otherwise answer "{Answer.WRONG.value}".'
-        )
-
-
 def greeting_user() -> str:
     """Print greetings in to console and ask user_name, return username"""
     print('Welcome to the Brain Games!')
@@ -53,7 +45,7 @@ def congratulations_user(user_name: str) -> None:
 
 def play_game(
         getting_question_and_answer: Callable,
-        rules: str = default_rules()
+        rules: str,
         ) -> None:
     """Play a game with the user, prompting them with a question
     and checking their answer."""

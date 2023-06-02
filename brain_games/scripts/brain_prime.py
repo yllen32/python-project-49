@@ -4,6 +4,12 @@ from random import randint
 from .utils import Answer,  play_game
 
 
+RULES = (
+            f'Answer "{Answer.CORRECT.value}" if the number is even, '
+            f'Otherwise answer "{Answer.WRONG.value}".'
+        )
+
+
 def main() -> None:
     play_game(_get_question_and_answer)
 
