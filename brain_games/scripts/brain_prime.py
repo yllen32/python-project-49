@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 from random import randint
 
-from .utils import Answer,  play_game
+from .utils import Answer, play_game
 
 
 RULES = (
-            f'Answer "{Answer.CORRECT.value}" if given number is prime, '
-            f'Otherwise answer "{Answer.WRONG.value}".'
-        )
+        f'Answer "{Answer.CORRECT.value}" if given number is prime, '
+        f'Otherwise answer "{Answer.WRONG.value}".'
+    )
 
 
 def main() -> None:

@@ -22,10 +22,7 @@ def greeting_user() -> str:
     return name
 
 
-def say_user_wrong_answer(
-        user_answer: str | int,
-        right_answer: str | int,
-        ) -> None:
+def say_user_wrong_answer(user_answer: str, right_answer: str) -> None:
     """Print user answer and correct answer."""
     return (
                 f"'{user_answer}' is wrong answer ;(. "
@@ -43,10 +40,7 @@ def congratulations_user(user_name: str) -> None:
     print(f"Congratulations, {user_name}!")
 
 
-def play_game(
-        getting_question_and_answer: Callable,
-        rules: str,
-        ) -> None:
+def play_game(getting_question_and_answer: Callable, rules: str) -> None:
     """Play a game with the user, prompting them with a question
     and checking their answer."""
     user_name = greeting_user()
