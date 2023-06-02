@@ -5,7 +5,7 @@ from .utils import Answer,  play_game
 
 
 RULES = (
-            f'Answer "{Answer.CORRECT.value}" if the number is even, '
+            f'Answer "{Answer.CORRECT.value}" if the number is prime, '
             f'Otherwise answer "{Answer.WRONG.value}".'
         )
 
