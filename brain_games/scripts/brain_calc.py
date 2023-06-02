@@ -5,19 +5,17 @@ from .utils import play_game
 
 OPERATORS = ('*', '+', '-')
 
+RULES = "What is the result of the expression?"
+
 
 def main() -> None:
-    play_game(_print_rules, _get_expression_for_question, _get_right_answer)
+    play_game(_get_expression_and_answer, RULES)
 
 
-def _print_rules() -> None:
-    """Print rules for user."""
-    return print("What is the result of the expression?")
-
-
-def _get_expression_for_question() -> str:
+def _get_expression_and_answer() -> str:
     """Get random string expression"""
-    return f'{randint(1, 100)} {choice(OPERATORS)} {randint(1, 100)}'
+    expression = f'{randint(1, 100)} {choice(OPERATORS)} {randint(1, 100)}'
+    return expression, _get_right_answer(expression)
 
 
 def _get_right_answer(expression: str) -> int:
