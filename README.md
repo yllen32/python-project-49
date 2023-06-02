@@ -2,6 +2,8 @@
 
 [![Actions Status](https://github.com/yllen32/python-project-49/workflows/hexlet-check/badge.svg)](https://github.com/yllen32/python-project-49/actions)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/6ec0e62bf61503e85935/maintainability)](https://codeclimate.com/github/yllen32/python-project-49/maintainability)
+
 # Игра "Проверка на чётность"
 
 Добро пожаловать в игру "Проверка на чётность"! В этой игре вам будут показываться случайные числа, и ваша задача - определить, является ли число чётным или нечётным.
