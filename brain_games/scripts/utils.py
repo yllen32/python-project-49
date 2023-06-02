@@ -13,8 +13,16 @@ MAX_ATTEMPTS = 3
 CORRECT_STATUS = 'Correct!'
 
 
+def default_rules() -> str:
+    """Print rules for user."""
+    return (
+            f'Answer "{Answer.CORRECT.value}" if the number is even, '
+            f'otherwise answer "{Answer.WRONG.value}".'
+        )
+
+
 def greeting_user() -> str:
-    """Print grettings in to console and ask user_name, return username"""
+    """Print greetings in to console and ask user_name, return username"""
     print('Welcome to the Brain Games!')
 
     name = prompt.string('May I have your name? ')
@@ -27,7 +35,7 @@ def say_user_wrong_answer(
         right_answer: str | int,
         ) -> None:
     """Print user answer and correct answer."""
-    return print(
+    return (
                 f"'{user_answer}' is wrong answer ;(. "
                 f"Correct answer was '{right_answer}'."
             )
@@ -44,20 +52,18 @@ def congratulations_user(user_name: str) -> None:
 
 
 def play_game(
-        print_rules: Callable,
-        getting_question: Callable,
-        get_right_answer: Callable,
+        getting_question_and_answer: Callable,
+        rules: str = default_rules()
         ) -> None:
     """Play a game with the user, prompting them with a question
     and checking their answer."""
     user_name = greeting_user()
-    print_rules()
+    print(rules)
     attempts = 0
     while attempts != MAX_ATTEMPTS:
-        question = getting_question()
+        question, right_answer = getting_question_and_answer()
         user_answer = prompt.string(f'Question: {question} ')
         print(f'Your answer: {user_answer}')
-        right_answer = get_right_answer(question)
         if user_answer == right_answer:
             print(CORRECT_STATUS)
         else:
