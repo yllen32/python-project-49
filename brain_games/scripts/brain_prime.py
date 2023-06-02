@@ -11,7 +11,7 @@ RULES = (
 
 
 def main() -> None:
-    play_game(_get_question_and_answer)
+    play_game(_get_question_and_answer, RULES)
 
 
 def _get_question_and_answer() -> str:
