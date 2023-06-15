@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 from random import randint
 
 from brain_games import game_engine as engine
@@ -29,6 +28,6 @@ def _get_right_answer(number: int) -> str:
     return engine.CORRECT
 
 
-def play_prime():
+def play_prime() -> None:
     """Start prime_game"""
     engine.play_game(_get_question_and_answer, RULES)

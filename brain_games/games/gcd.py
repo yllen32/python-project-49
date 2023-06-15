@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 from random import randint
 
 from brain_games import game_engine as engine
@@ -24,6 +23,6 @@ def _get_right_answer(a: int, b: int) -> str:
     return str(a)
 
 
-def play_gcd():
+def play_gcd() -> None:
     """Start gcd game"""
     engine.play_game(_get_question_and_answer, RULES)

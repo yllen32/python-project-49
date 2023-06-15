@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 from random import randint, choice
 
 from brain_games import game_engine as engine
