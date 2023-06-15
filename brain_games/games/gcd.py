@@ -11,7 +11,6 @@ def _get_question_and_answer() -> tuple:
     """Get random integer from 1 to 100 range"""
     a = randint(MIN_VALUE, MAX_VALUE)
     b = randint(MIN_VALUE, MAX_VALUE)
-    print(_get_right_answer(a, b))
     return f'{a} {b}', _get_right_answer(a, b)
 
 
