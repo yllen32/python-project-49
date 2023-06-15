@@ -13,9 +13,9 @@ MAX_VALUE = 100
 def _get_expression_and_answer() -> tuple:
     """Get random string expression"""
     expression = [
-        randint(MIN_VALUE, MAX_VALUE),
-        choice(OPERATORS),
-        randint(MIN_VALUE, MAX_VALUE),
+        str(randint(MIN_VALUE, MAX_VALUE)),
+        str(choice(OPERATORS)),
+        str(randint(MIN_VALUE, MAX_VALUE)),
     ]
     return ' '.join(expression), _get_right_answer(expression)
 
