@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from .utils import greeting_user
+from brain_games.game_engine import greeting_user
 
 
 def main() -> None:
