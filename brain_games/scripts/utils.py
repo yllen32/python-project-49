@@ -1,14 +1,10 @@
-from enum import Enum
 from typing import Callable
 
 import prompt
 
 
-class Answer(Enum):
-    CORRECT = 'yes'
-    WRONG = 'no'
-
-
+CORRECT = 'yes'
+WRONG = 'no'
 MAX_ATTEMPTS = 3
 CORRECT_STATUS = 'Correct!'
 

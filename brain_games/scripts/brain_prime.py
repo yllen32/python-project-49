@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 from random import randint
 
-from .utils import Answer, play_game
+from .utils import CORRECT, WRONG, play_game
 
 
 RULES = (
-    f'Answer "{Answer.CORRECT.value}" if given number is prime, '
-    f'Otherwise answer "{Answer.WRONG.value}".'
+    f'Answer "{CORRECT}" if given number is prime, '
+    f'Otherwise answer "{WRONG}".'
 )
 
 
@@ -27,8 +27,8 @@ def _get_right_answer(number: int) -> str:
         return False
     for i in range(2, int(number ** 0.5) + 1):
         if number % i == 0:
-            return Answer.WRONG.value
-    return Answer.CORRECT.value
+            return WRONG
+    return CORRECT
 
 
 if __name__ == '__main__':

@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 from random import randint
 
-from .utils import Answer, play_game
+from .utils import CORRECT, WRONG, play_game
 
 
 RULES = (
-    f'Answer "{Answer.CORRECT.value}" if the number is even, '
-    f'otherwise answer "{Answer.WRONG.value}".'
+    f'Answer "{CORRECT}" if the number is even, '
+    f'otherwise answer "{WRONG}".'
 )
 
 
@@ -24,8 +24,8 @@ def _get_right_answer(digit: int) -> str:
     """Get right answer for given digit. return 'yes' if it even, 'no'
     otherwise."""
     if digit % 2 == 0:
-        return Answer.CORRECT.value
-    return Answer.WRONG.value
+        return CORRECT
+    return WRONG
 
 
 if __name__ == '__main__':
