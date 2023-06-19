@@ -14,18 +14,19 @@ MAX_VALUE = 100
 def _get_question_and_answer() -> tuple:
     """Get random integer from 1 to 100 range"""
     digit = randint(MIN_VALUE, MAX_VALUE)
-    return digit, _get_right_answer(digit)
+    answer = engine.CORRECT if (
+        digit > 2 and _is_prime(digit)
+    ) else engine.WRONG
+    return digit, answer
 
 
-def _get_right_answer(number: int) -> str:
-    """Get right answer for given digit. return 'yes' if it even, 'no'
+def _is_prime(number: int) -> bool:
+    """Get right answer for given digit. return True if it prime, False
     otherwise."""
-    if number < 2:
-        return False
     for i in range(2, int(number ** 0.5) + 1):
         if number % i == 0:
-            return engine.WRONG
-    return engine.CORRECT
+            return False
+    return True
 
 
 def play_prime() -> None:
