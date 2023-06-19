@@ -14,15 +14,8 @@ MAX_VALUE = 100
 def _get_question_and_answer() -> tuple:
     """Get random integer from"""
     digit = randint(MIN_VALUE, MAX_VALUE)
-    return digit, _get_right_answer(digit)
-
-
-def _get_right_answer(digit: int) -> str:
-    """Get right answer for given digit. return 'yes' if it even, 'no'
-    otherwise."""
-    if digit % 2 == 0:
-        return engine.CORRECT
-    return engine.WRONG
+    answer = engine.CORRECT if (digit % 2 == 0) else engine.WRONG
+    return digit, answer
 
 
 def play_even() -> None:
