@@ -14,19 +14,15 @@ MAX_VALUE = 100
 
 def _get_expression_and_answer() -> tuple:
     """Get random string expression"""
-    first_number = randint(MIN_VALUE, MAX_VALUE)
-    second_number = randint(MIN_VALUE, MAX_VALUE)
+    num1 = randint(MIN_VALUE, MAX_VALUE)
+    num2 = randint(MIN_VALUE, MAX_VALUE)
     operator = choice(tuple(OPERATOR_FUNCTIONS.keys()))
-    expression = f'{first_number} {operator} {second_number}'
-    right_answer = _get_right_answer(
-        first_number,
-        second_number,
-        OPERATOR_FUNCTIONS[operator]
-    )
+    expression = f'{num1} {operator} {num2}'
+    right_answer = _calculate(num1, num2, OPERATOR_FUNCTIONS[operator])
     return expression, str(right_answer)
 
 
-def _get_right_answer(num1: int, num2: int, action: Callable) -> int:
+def _calculate(num1: int, num2: int, action: Callable) -> int:
     """Calculate right answer for the give numbers and operator."""
     return action(num1, num2)
 
