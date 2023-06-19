@@ -1,8 +1,10 @@
 from random import randint, choice
+from operator import add, sub, mul
+from typing import Callable
 
 from brain_games import game_engine as engine
 
-OPERATORS = ('*', '+', '-')
+OPERATOR_FUNCTIONS = {'*': mul, '+': add, '-': sub}
 
 RULES = "What is the result of the expression?"
 
@@ -12,17 +14,21 @@ MAX_VALUE = 100
 
 def _get_expression_and_answer() -> tuple:
     """Get random string expression"""
-    expression = ' '.join([
-        str(randint(MIN_VALUE, MAX_VALUE)),
-        str(choice(OPERATORS)),
-        str(randint(MIN_VALUE, MAX_VALUE)),
-    ])
-    return expression, _get_right_answer(expression)
+    first_number = randint(MIN_VALUE, MAX_VALUE)
+    second_number = randint(MIN_VALUE, MAX_VALUE)
+    operator = choice(OPERATOR_FUNCTIONS)
+    expression = f'{first_number} {operator} {second_number}'
+    right_answer = _get_right_answer(
+        first_number,
+        second_number,
+        OPERATOR_FUNCTIONS[operator]
+    )
+    return expression, right_answer
 
 
-def _get_right_answer(expression: str) -> int:
-    """Calculate right answer for expression."""
-    return str(eval(expression))
+def _get_right_answer(num1: int, num2: int, action: Callable) -> int:
+    """Calculate right answer for the give numbers and operator."""
+    return action(num1, num2)
 
 
 def play_calc() -> None:
