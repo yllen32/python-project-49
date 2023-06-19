@@ -23,7 +23,7 @@ def _get_expression_and_answer() -> tuple:
         second_number,
         OPERATOR_FUNCTIONS[operator]
     )
-    return expression, right_answer
+    return expression, str(right_answer)
 
 
 def _get_right_answer(num1: int, num2: int, action: Callable) -> int:
