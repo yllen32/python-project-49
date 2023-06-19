@@ -16,7 +16,7 @@ def _get_expression_and_answer() -> tuple:
     """Get random string expression"""
     first_number = randint(MIN_VALUE, MAX_VALUE)
     second_number = randint(MIN_VALUE, MAX_VALUE)
-    operator = choice(OPERATOR_FUNCTIONS)
+    operator = choice(tuple(OPERATOR_FUNCTIONS.keys()))
     expression = f'{first_number} {operator} {second_number}'
     right_answer = _get_right_answer(
         first_number,
