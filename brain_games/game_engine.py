@@ -9,15 +9,6 @@ MAX_ATTEMPTS = 3
 CORRECT_STATUS = 'Correct!'
 
 
-def greeting_user() -> str:
-    """Print greetings in to console and ask user_name, return username"""
-    print('Welcome to the Brain Games!')
-
-    name = prompt.string('May I have your name? ')
-    print(f'Hello, {name}!')
-    return name
-
-
 def say_user_wrong_answer(user_answer: str, right_answer: str) -> None:
     """Print user answer and correct answer."""
     return (
